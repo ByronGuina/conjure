@@ -1,0 +1,113 @@
+:root {
+	--font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+	--font-mono: 'IBM Plex Mono', 'Menlo', monospace;
+	--elevation-0: #040404;
+	--elevation-1: #080808;
+	--elevation-2: #121212;
+	--elevation-3: #161616;
+	--elevation-7: #909090;
+	--elevation-8: #b0b0b0;
+	--elevation-9: #c0c0c0;
+	--elevation-10: #d0d0d0;
+	--accent-green: #4ec788;
+	--accent-red: #c25b55;
+	--accent-blue: #51c7d6;
+	/* --accent-yellow: ''; */
+	--border-radius: 2px;
+	--spacing-2: 2px;
+	--spacing-4: 4px;
+	--spacing-6: 6px;
+	--spacing-8: 8px;
+	--spacing-16: 16px;
+	--spacing-32: 32px;
+	--spacing-64: 64px;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body,
+html {
+	font-size: 1rem;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-kerning: auto;
+	font-feature-settings: 'kern' 1, 'liga' 1, 'clig' 1, 'calt' 1, 'cv10' 1, 'cv06' 1;
+	-webkit-font-feature-settings: 'kern' 1, 'liga' 1, 'clig' 1, 'calt' 1, 'cv10' 1, 'cv06' 1;
+	-moz-font-feature-settings: 'kern' 1, 'liga' 1, 'clig' 1, 'calt' 1, 'cv10' 1, 'cv06' 1;
+	-ms-font-feature-settings: 'kern' 1, 'liga' 1, 'clig' 1, 'calt' 1, 'cv10' 1, 'cv06' 1;
+
+	max-width: 70ch;
+
+	min-height: 100vh;
+	background: var(--elevation-10);
+	color: var(--elevation-1);
+
+	font-family: var(--font-mono);
+	line-height: 1.5em;
+	/* letter-spacing: -0.011em; */
+	/* letter-spacing: -0.018em; */
+
+	margin: 0 auto;
+	padding: 0;
+}
+
+.number {
+	font-feature-settings: 'ss01' 1, 'ss02' 1, 'zero' 1;
+	-webkit-font-feature-settings: 'ss01' 1, 'ss02' 1, 'zero' 1;
+	-moz-font-feature-settings: 'ss01' 1, 'ss02' 1, 'zero' 1;
+	-ms-font-feature-settings: 'ss01' 1, 'ss02' 1, 'zero' 1;
+}
+
+.type-heading-one {
+	font-size: 76px;
+	line-height: 83px;
+	letter-spacing: -0.06em;
+}
+
+.type-heading-two {
+	font-size: 61px;
+	line-height: 67px;
+	letter-spacing: -0.06em;
+}
+
+.type-heading-three {
+	font-size: 49px;
+	line-height: 54px;
+	letter-spacing: -0.06em;
+}
+
+.type-heading-four {
+	font-size: 39px;
+	line-height: 44px;
+	letter-spacing: -0.042em;
+}
+
+.type-supertitle {
+	font-size: 20px;
+	line-height: 24px;
+	letter-spacing: -0.042em;
+	text-transform: uppercase;
+}
+
+.type-paragraph {
+	font-size: 16px;
+	line-height: 22px;
+	letter-spacing: -0.018em;
+}
+
+.type-caption {
+	font-size: 12px;
+	line-height: 16px;
+	letter-spacing: -0.018em;
+}
+
+.font-mono {
+	font-family: var(--font-mono);
+}
+
+.font-sans {
+	font-family: var(--font-mono);
+}
