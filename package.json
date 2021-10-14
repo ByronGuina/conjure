@@ -27,6 +27,7 @@
   },
   "type": "module",
   "dependencies": {
+    "@sveltejs/adapter-vercel": "^1.0.0-next.0",
     "@tiptap/core": "^2.0.0-beta.102",
     "@tiptap/extension-placeholder": "^2.0.0-beta.28",
     "@tiptap/starter-kit": "^2.0.0-beta.101"
