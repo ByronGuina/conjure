@@ -9,6 +9,7 @@
     --elevation-8: #b0b0b0;
     --elevation-9: #c0c0c0;
     --elevation-10: #d0d0d0;
+    --elevation-lazy-0: #1d1d1b;
     --accent-green: #4ec788;
     --accent-red: #c25b55;
     --accent-blue: #51c7d6;
@@ -41,8 +42,8 @@ html {
 
     max-width: 80ch;
     min-height: 100vh;
-    background: var(--elevation-10);
-    color: var(--elevation-1);
+    background: var(--elevation-lazy-0);
+    color: var(--elevation-10);
 
     font-family: var(--font-mono);
     line-height: 1.5em;
