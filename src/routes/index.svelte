@@ -22,11 +22,37 @@
 	}
 
 	.ProseMirror {
-		min-height: 90vh;
+		min-height: 80vh;
 		caret-shape: underscore;
 	}
 
 	.ProseMirror-focused {
 		outline: none;
+	}
+
+	.ProseMirror h1 {
+		margin-top: var(--spacing-64);
+		margin-bottom: var(--spacing-16);
+	}
+
+	.ProseMirror h2 {
+		margin-top: var(--spacing-32);
+		margin-bottom: var(--spacing-8);
+	}
+
+	.ProseMirror h3 {
+		margin-top: var(--spacing-8);
+		margin-bottom: var(--spacing-4);
+	}
+
+	.ProseMirror p {
+		margin-top: 0;
+		margin-bottom: var(--spacing-8);
+	}
+
+	.ProseMirror li {
+		margin-top: 0;
+		margin-bottom: var(--spacing-4);
+		list-style: square;
 	}
 </style>
