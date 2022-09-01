@@ -1,0 +1,40 @@
+{
+  "name": "web",
+  "private": true,
+  "description": "",
+  "license": "",
+  "sideEffects": false,
+  "scripts": {
+    "start": "cross-env NODE_ENV=production netlify dev",
+    "build": "npm run build:css && remix build",
+    "build:css": "tailwindcss -m -i ./styles/app.css -o app/styles/app.css",
+    "dev": "concurrently \"npm run dev:css\" \"remix dev\"",
+    "dev:css": "tailwindcss -w -i ./styles/app.css -o app/styles/app.css"
+  },
+  "dependencies": {
+    "@netlify/functions": "latest",
+    "@remix-run/netlify-edge": "experimental-netlify-edge",
+    "@remix-run/react": "experimental-netlify-edge",
+    "@remix-run/server-runtime": "experimental-netlify-edge",
+    "cross-env": "^7.0.3",
+    "isbot": "^3.4.6",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+    "@remix-run/dev": "experimental-netlify-edge",
+    "@remix-run/eslint-config": "experimental-netlify-edge",
+    "@remix-run/serve": "experimental-netlify-edge",
+    "@types/react": "^18.0.5",
+    "@types/react-dom": "^18.0.1",
+    "autoprefixer": "^10.4.8",
+    "concurrently": "^7.3.0",
+    "eslint": "^8.11.0",
+    "postcss": "^8.4.16",
+    "tailwindcss": "^3.1.8",
+    "typescript": "^4.5.5"
+  },
+  "engines": {
+    "node": ">=14"
+  }
+}

@@ -1,0 +1,83 @@
+@tailwind base;
+
+/* @font-face {
+	font-family: 'Byron';
+	font-style: normal;
+	font-weight: 400;
+	src: local(''), url('https://bairun-fonts.netlify.app/sohne-regular.woff2') format('woff2');
+	font-display: swap;
+} */
+
+/*
+@font-face {
+	font-family: 'Byron';
+	font-style: italic;
+	font-weight: 400;
+	src: local(''),
+		url('https://bairun-fonts.netlify.app/sohne-regular-cursive.woff2') format('woff2');
+	font-display: swap;
+} */
+
+/*
+@font-face {
+	font-family: 'Byron';
+	font-style: normal;
+	font-weight: 600;
+	src: local(''), url('https://bairun-fonts.netlify.app/sohne-semibold.woff2') format('woff2');
+	font-display: swap;
+}*/
+
+/*
+@font-face {
+    font-family: 'Byron';
+    font-style: italic;
+    font-weight: 600;
+    src: local(''), url('https://bairun-fonts.netlify.app/sohne-semibold-cursive.woff2') format('woff2');
+    font-display: swap;
+} */
+
+/* @font-face {
+	font-family: 'Byron Mono';
+	font-style: normal;
+	font-weight: 400;
+	src: url('https://bairun-fonts.netlify.app/ByronMono-Regular.woff2') format('woff2');
+} */
+
+/* @font-face {
+    font-family: 'Byron Mono';
+    font-style: normal;
+    font-weight: 600;
+    src: url('https://bairun-fonts.netlify.app/ByronMono-Semibold.woff2') format('woff2');
+} */
+
+body,
+html {
+	max-width: 100vw;
+	min-height: 100vh;
+	font-size: 1rem;
+	/* @apply font-sans text-elevation-2 bg-elevation-0; */
+	/* letter-spacing: 0.011em; */
+
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-kerning: auto;
+	font-feature-settings: 'kern' 1, 'liga' 1, 'clig' 1, 'calt' 1, 'cv10' 1, 'cv06' 1, 'dlig' 1,
+		'ccmp' 1;
+	-webkit-font-feature-settings: 'kern' 1, 'liga' 1, 'clig' 1, 'calt' 1, 'cv10' 1, 'cv06' 1,
+		'dlig' 1, 'ccmp' 1;
+	-moz-font-feature-settings: 'kern' 1, 'liga' 1, 'clig' 1, 'calt' 1, 'cv10' 1, 'cv06' 1, 'dlig' 1,
+		'ccmp' 1;
+	-ms-font-feature-settings: 'kern' 1, 'liga' 1, 'clig' 1, 'calt' 1, 'cv10' 1, 'cv06' 1, 'dlig' 1,
+		'ccmp' 1;
+}
+
+.layout {
+	padding: 2ch;
+	padding-top: 6ch;
+	margin: 0 auto;
+	max-width: 70ch;
+}
+
+@tailwind components;
+@tailwind utilities;
