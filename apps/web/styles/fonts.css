@@ -1,0 +1,15 @@
+@font-face {
+	font-family: 'JetBrains Mono';
+	font-style: normal;
+	font-weight: 400;
+	/* src: url("./JetBrains-Mono-400-normal.woff2") format("woff2"); */
+	src: url('./JetBrains-Mono-400-normal-compressed.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Byron';
+	font-style: normal;
+	font-weight: 400;
+	src: url('./sohne-regular-compressed.woff2') format('woff2');
+	/* font-display: swap; */
+}

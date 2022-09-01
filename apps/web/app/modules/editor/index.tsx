@@ -45,7 +45,7 @@ export const Editor = memo(function Editor({ initialContent }: Props) {
         ],
         editorProps: {
             attributes: {
-                class: 'editor prose prose-zinc max-w-none focus:outline-none text-geo-grey-100 text-geo-body',
+                class: 'editor prose max-w-none focus:outline-none text-geo-grey-100 text-geo-body',
             },
         },
         onUpdate: ({ editor }) => converter.makeMarkdown(editor.getHTML()),

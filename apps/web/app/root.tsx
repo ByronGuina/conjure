@@ -2,9 +2,16 @@ import type { LinksFunction, MetaFunction } from '@remix-run/server-runtime';
 import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration } from '@remix-run/react';
 
 import styles from './styles/app.css';
+import fonts from './styles/app.css';
 
 export const links: LinksFunction = () => {
-    return [{ rel: 'stylesheet', href: styles }];
+    return [
+        { rel: 'stylesheet', href: styles },
+        {
+            rel: 'stylesheet',
+            href: fonts,
+        },
+    ];
 };
 
 export const meta: MetaFunction = () => ({

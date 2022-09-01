@@ -76,11 +76,18 @@ html {
 }
 
 .editor h1.is-editor-empty:first-child::before {
-    @apply text-stone-400;
+    @apply text-zinc-300;
     content: attr(data-placeholder);
     float: left;
     pointer-events: none;
     height: 0;
+}
+
+.editor h1,
+h2,
+h3,
+p {
+    @apply text-zinc-700;
 }
 
 @tailwind components;
