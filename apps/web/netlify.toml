@@ -1,9 +1,9 @@
 [build]
-command = "remix build"
+command = "pnpm build"
 publish = "public"
 
 [dev]
-command = "remix watch"
+command = "pnpm local:all"
 port = 3000
 
 [[headers]]
