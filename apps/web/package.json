@@ -5,10 +5,11 @@
     "license": "",
     "sideEffects": false,
     "scripts": {
+        "clear": "rm -rf ./public/build",
         "start": "cross-env NODE_ENV=production netlify dev",
         "dev": "cross-env NODE_ENV=development netlify dev",
         "local:all": "run-p css:dev remix:dev",
-        "build": "npm run css:build && remix build",
+        "build": "pnpm clear && pnpm run css:build && remix build",
         "remix:dev": "remix watch",
         "css:dev": "postcss **/*.css --dir app/styles -w",
         "css:build": "postcss **/*.css --dir app/styles --env production",
