@@ -2,7 +2,6 @@
 	font-family: 'JetBrains Mono';
 	font-style: normal;
 	font-weight: 400;
-	/* src: url("./JetBrains-Mono-400-normal.woff2") format("woff2"); */
 	src: url('./JetBrains-Mono-400-normal-compressed.woff2') format('woff2');
 }
 
@@ -11,5 +10,18 @@
 	font-style: normal;
 	font-weight: 400;
 	src: url('./sohne-regular-compressed.woff2') format('woff2');
-	/* font-display: swap; */
+}
+
+@font-face {
+	font-family: 'Quattro';
+	font-style: normal;
+	font-weight: 400;
+	src: url('./iAWriterQuattroV.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Quattro';
+	font-style: italic;
+	font-weight: 400;
+	src: url('./iAWriterQuattroV-italic.ttf') format('truetype');
 }
