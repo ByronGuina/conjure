@@ -1,5 +1,9 @@
 import { Editor } from '~/modules/editor';
 
 export default function Index() {
-    return <Editor />;
+    return (
+        <div className='layout'>
+            <Editor />
+        </div>
+    );
 }

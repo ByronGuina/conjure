@@ -75,6 +75,10 @@ html {
     max-width: 70ch;
 }
 
+.editor {
+    min-height: calc(100vh * .85);
+}
+
 .editor h1.is-editor-empty:first-child::before {
     @apply text-zinc-300;
     content: attr(data-placeholder);
