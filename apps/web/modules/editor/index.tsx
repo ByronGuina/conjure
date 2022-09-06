@@ -2,28 +2,27 @@ import Document from '@tiptap/extension-document';
 import LinkExtension from '@tiptap/extension-link';
 import Placeholder from '@tiptap/extension-placeholder';
 import { EditorContent, useEditor } from '@tiptap/react';
-import type { EditorOptions } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
 import { memo } from 'react';
 import showdown from 'showdown';
 
 interface Props {
     initialContent?: string;
-    editable?: EditorOptions['editable'];
+    onDone: (content: string) => void;
 }
 
 const converter = new showdown.Converter();
 
-const PLACEHOLDER = 'Start by giving your page a title...';
+const PLACEHOLDER = 'Title...';
 
 const CustomDocument = Document.extend({
     content: 'heading block*',
 });
 
 // Don't want to rerender the editor over and over
-export const Editor = memo(function Editor({ initialContent }: Props) {
+export const Editor = memo(function Editor({ initialContent, onDone }: Props) {
     const editor = useEditor({
-        ...(initialContent && { content: converter.makeHtml(initialContent) }),
+        ...(initialContent && { content: initialContent }),
         extensions: [
             LinkExtension,
             CustomDocument,
@@ -48,7 +47,9 @@ export const Editor = memo(function Editor({ initialContent }: Props) {
                 class: 'editor prose max-w-none focus:outline-none text-geo-grey-100 text-geo-body',
             },
         },
-        onUpdate: ({ editor }) => converter.makeMarkdown(editor.getHTML()),
+        onBlur: ({ editor }) => {
+            onDone(editor.getHTML());
+        },
     });
 
     return <EditorContent editor={editor} />;
