@@ -1,52 +1,40 @@
-import { Editor } from '~/modules/editor';
 import { PrismaClient } from '@prisma/client';
 import { GetServerSideProps } from 'next';
+import Link from 'next/link';
+import { Note } from '~/modules/types';
 
 const client = new PrismaClient();
 
-type Logbook = {
-    id: number;
-    name: string;
-    content: string;
-};
-
 type Props = {
-    logbook: Logbook;
+    notes: Note[];
 };
 
-export default function Index({ logbook }: Props) {
-    const onDone = (content: string) => {
-        fetch(`/api/${logbook.id}`, {
-            method: 'POST',
-            body: JSON.stringify({ content }),
-        });
-    };
-
+export default function Index({ notes }: Props) {
     return (
-        <div className='layout'>
-            <Editor initialContent={logbook.content} onDone={onDone} />
+        <div>
+            <ul>
+                {notes.map((note) => (
+                    <li key={note.id}>
+                        <Link href={`/notes/${note.id}`}>
+                            <a>{note.name}</a>
+                        </Link>
+                    </li>
+                ))}
+            </ul>
         </div>
     );
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
-    const logbook = await client.note.findUnique({
-        where: { id: 1 },
-    });
-
-    if (!logbook) {
-        throw new Error('Logbook not found');
-    }
-
-    console.log(logbook.content);
+    const notes = await client.note.findMany();
 
     return {
         props: {
-            logbook: {
-                id: logbook.id,
-                name: logbook.name,
-                content: logbook.content,
-            },
+            notes: notes.map((note) => ({
+                id: note.id,
+                name: note.name,
+                content: note.content,
+            })),
         },
     };
 };

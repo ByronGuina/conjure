@@ -8,7 +8,7 @@ import showdown from 'showdown';
 
 interface Props {
     initialContent?: string;
-    onDone: (content: string) => void;
+    onDone: (content: string, text: string) => void;
 }
 
 const converter = new showdown.Converter();
@@ -48,7 +48,7 @@ export const Editor = memo(function Editor({ initialContent, onDone }: Props) {
             },
         },
         onBlur: ({ editor }) => {
-            onDone(editor.getHTML());
+            onDone(editor.getHTML(), editor.getText());
         },
     });
 
