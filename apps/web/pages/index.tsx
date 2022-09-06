@@ -26,7 +26,7 @@ export default function Index({ notes }: Props) {
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
-    const notes = await client.note.findMany();
+    const notes: Note[] = await client.note.findMany();
 
     return {
         props: {
