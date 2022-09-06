@@ -7,10 +7,14 @@ export default async function handler(request: NextApiRequest, response: NextApi
     try {
         const { body } = request;
         const content = JSON.parse(body).content;
+
+        const start = content.indexOf('<h1>') + 4;
+        const end = content.indexOf('</h1>');
+
         const newNote = await client.note.update({
             where: { id: Number(request.query.id) },
             data: {
-                name: 'Logbook: 09-02-2022', // TODO: Parse name from first line of content
+                name: content.substring(start, end), // TODO: Parse name from first line of content
                 content,
             },
         });
