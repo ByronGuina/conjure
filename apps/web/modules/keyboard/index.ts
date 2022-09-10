@@ -20,8 +20,8 @@ export const useKeyboardShortcuts = (shortcuts: Shortcut[]) => {
             shortcuts.forEach((shortcut) => {
                 const handler = (e: KeyboardEvent) => {
                     if (e.key === shortcut.key && !editorState.isFocused && !searchState.isOpen) {
-                        e.preventDefault();
-                        shortcut.cb();
+                      shortcut.cb();
+                      e.preventDefault();
                     }
                 };
 
