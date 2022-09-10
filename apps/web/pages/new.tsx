@@ -6,6 +6,7 @@ import { Note } from '~/modules/types';
 export default function New() {
     const router = useRouter();
 
+    // TODO: Abstract to editor domain service
     const onDone = async (content: string, text: string) => {
         const response = await fetch(`/api/new`, {
             method: 'POST',

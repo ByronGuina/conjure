@@ -16,7 +16,7 @@ export default function Index({ notes }: Props) {
             <Head>
                 <title>Thoughts | @bairun_</title>
             </Head>
-            <ul>
+            <ul className='font-sans space-y-1'>
                 {notes.map((note) => (
                     <li key={note.id}>
                         <Link href={`/notes/${note.id}`}>

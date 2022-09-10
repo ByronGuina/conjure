@@ -93,11 +93,15 @@ html {
 }
 
 .editor h1.is-editor-empty:first-child::before {
-    @apply text-zinc-300;
+    @apply text-zinc-300 font-sans;
     content: attr(data-placeholder);
     float: left;
     pointer-events: none;
     height: 0;
+}
+
+.editor h1:first-of-type {
+    @apply font-sans;
 }
 
 .editor h1,

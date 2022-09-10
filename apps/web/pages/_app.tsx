@@ -1,18 +1,16 @@
 import '../styles/app.css';
 import { AppProps } from 'next/app';
 import Link from 'next/link';
-import React from 'react';
-import { Note } from '~/modules/types';
+import Head from 'next/head';
 import { useKeyboardShortcuts } from '~/modules/keyboard';
 import { useRouter } from 'next/router';
 
 function MyApp({ Component, pageProps }: AppProps) {
-    const [notes, setNotes] = React.useState<Note[]>([]);
     const router = useRouter();
 
     useKeyboardShortcuts([
         {
-            key: '/',
+            key: 'n',
             cb: () => router.push('/new'),
         },
         {
@@ -21,15 +19,11 @@ function MyApp({ Component, pageProps }: AppProps) {
         },
     ]);
 
-    // TODO: Some external state store
-    React.useEffect(() => {
-        fetch('/api/notes')
-            .then((response) => response.json())
-            .then(setNotes);
-    }, [setNotes]);
-
     return (
         <div>
+            <Head>
+                <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1' />
+            </Head>
             <nav className='navbar flex justify-between w-full'>
                 <Link href='/'>
                     <a>Home</a>

@@ -4,7 +4,7 @@ import { useSharedObservable } from '../sync/hook';
 
 export type Shortcut = {
     key: string;
-    cb: { (): void };
+    cb: () => void;
 };
 
 // Need to turn off keyboard shortcuts while typing in a textarea
@@ -17,10 +17,9 @@ export const useKeyboardShortcuts = (shortcuts: Shortcut[]) => {
         if (window) {
             shortcuts.forEach((shortcut) => {
                 const handler = (e: KeyboardEvent) => {
-                    if (e.key === shortcut.key && e.ctrlKey && !editorState.isFocused) {
-                        shortcut.cb();
-                    }
+                    if (e.key === shortcut.key && !editorState.isFocused) shortcut.cb();
                 };
+
                 window.addEventListener('keydown', handler);
                 handlers.push(handler);
             });
