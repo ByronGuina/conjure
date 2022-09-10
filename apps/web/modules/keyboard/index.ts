@@ -19,7 +19,10 @@ export const useKeyboardShortcuts = (shortcuts: Shortcut[]) => {
         if (window) {
             shortcuts.forEach((shortcut) => {
                 const handler = (e: KeyboardEvent) => {
-                    if (e.key === shortcut.key && !editorState.isFocused && !searchState.isOpen) shortcut.cb();
+                    if (e.key === shortcut.key && !editorState.isFocused && !searchState.isOpen) {
+                        e.preventDefault();
+                        shortcut.cb();
+                    }
                 };
 
                 window.addEventListener('keydown', handler);
