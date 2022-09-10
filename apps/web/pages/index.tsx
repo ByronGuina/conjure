@@ -1,16 +1,11 @@
-import { PrismaClient } from '@prisma/client';
-import { GetServerSideProps } from 'next';
 import Link from 'next/link';
-import { Note } from '~/modules/types';
 import Head from 'next/head';
+import { useSharedObservable } from '~/modules/sync/hook';
+import { notes$ } from '~/modules/sync/store';
 
-const client = new PrismaClient();
+export default function Index() {
+    const notes = useSharedObservable(notes$);
 
-type Props = {
-    notes: Note[];
-};
-
-export default function Index({ notes }: Props) {
     return (
         <div>
             <Head>
@@ -28,17 +23,3 @@ export default function Index({ notes }: Props) {
         </div>
     );
 }
-
-export const getServerSideProps: GetServerSideProps = async () => {
-    const notes: Note[] = await client.note.findMany();
-
-    return {
-        props: {
-            notes: notes.map((note) => ({
-                id: note.id,
-                name: note.name,
-                content: note.content,
-            })),
-        },
-    };
-};

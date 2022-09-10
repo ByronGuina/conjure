@@ -15,7 +15,7 @@ export const editor$ = new BehaviorSubject<EditorState>({ isFocused: false });
 
 interface Props {
     initialContent?: string;
-    onDone: (content: string, text: string) => void;
+    onDone: (content: string) => void;
 }
 
 const converter = new showdown.Converter();
@@ -55,7 +55,7 @@ export const Editor = memo(function Editor({ initialContent, onDone }: Props) {
             },
         },
         onBlur: ({ editor }) => {
-            onDone(editor.getHTML(), editor.getText());
+            onDone(editor.getHTML());
             editor$.next({ isFocused: false });
         },
         onFocus: () => editor$.next({ isFocused: true }),

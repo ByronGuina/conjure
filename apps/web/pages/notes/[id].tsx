@@ -1,15 +1,30 @@
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { Editor } from '~/modules/editor';
-import { PrismaClient } from '@prisma/client';
-import { GetServerSideProps } from 'next';
+import { useSharedObservable } from '~/modules/sync/hook';
+import { notes$ } from '~/modules/sync/store';
 import { Note as NoteType } from '~/modules/types';
-
-const client = new PrismaClient();
 
 type Props = {
     note: NoteType;
 };
 
-export default function Note({ note }: Props) {
+export default function Note() {
+    const router = useRouter();
+    const notes = useSharedObservable(notes$);
+    const note = notes.find((note) => note.id === Number(router.query.id as string));
+
+    if (!note) {
+        return (
+            <div>
+                <h1>This note does not exist</h1>
+                <Link href='/'>
+                    <a>Home</a>
+                </Link>
+            </div>
+        );
+    }
+
     const onDone = (content: string) => {
         fetch(`/api/${note.id}`, {
             method: 'POST',
@@ -23,26 +38,3 @@ export default function Note({ note }: Props) {
         </div>
     );
 }
-
-export const getServerSideProps: GetServerSideProps = async ({ params }) => {
-    if (!params?.id) throw new Error('Note not found');
-    const id = params.id as string;
-
-    const note = await client.note.findUnique({
-        where: { id: Number(id) },
-    });
-
-    if (!note) {
-        throw new Error('Note not found');
-    }
-
-    return {
-        props: {
-            note: {
-                id: note.id,
-                name: note.name,
-                content: note.content,
-            },
-        },
-    };
-};

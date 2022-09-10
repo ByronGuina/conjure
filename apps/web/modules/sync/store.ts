@@ -6,6 +6,8 @@ interface INetwork {
     getNote(id: number): Promise<Note>;
 }
 
+export const notes$ = new BehaviorSubject<Note[]>([]);
+
 export class Notes {
     network: INetwork;
 
