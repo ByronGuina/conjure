@@ -2,6 +2,7 @@ import { PrismaClient } from '@prisma/client';
 import { GetServerSideProps } from 'next';
 import Link from 'next/link';
 import { Note } from '~/modules/types';
+import Head from 'next/head';
 
 const client = new PrismaClient();
 
@@ -12,6 +13,9 @@ type Props = {
 export default function Index({ notes }: Props) {
     return (
         <div>
+            <Head>
+                <title>Thoughts | @bairun_</title>
+            </Head>
             <ul>
                 {notes.map((note) => (
                     <li key={note.id}>

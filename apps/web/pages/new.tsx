@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { Editor } from '~/modules/editor';
 import { Note } from '~/modules/types';
@@ -17,6 +18,9 @@ export default function New() {
 
     return (
         <div>
+            <Head>
+                <title>New thought | @bairun_</title>
+            </Head>
             <Editor onDone={onDone} />
         </div>
     );
