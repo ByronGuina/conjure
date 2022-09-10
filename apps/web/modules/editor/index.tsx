@@ -4,7 +4,14 @@ import Placeholder from '@tiptap/extension-placeholder';
 import { EditorContent, useEditor } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
 import { memo } from 'react';
+import { BehaviorSubject } from 'rxjs';
 import showdown from 'showdown';
+
+type EditorState = {
+    isFocused: boolean;
+};
+
+export const editor$ = new BehaviorSubject<EditorState>({ isFocused: false });
 
 interface Props {
     initialContent?: string;
@@ -49,7 +56,9 @@ export const Editor = memo(function Editor({ initialContent, onDone }: Props) {
         },
         onBlur: ({ editor }) => {
             onDone(editor.getHTML(), editor.getText());
+            editor$.next({ isFocused: false });
         },
+        onFocus: () => editor$.next({ isFocused: true }),
     });
 
     return <EditorContent editor={editor} />;
