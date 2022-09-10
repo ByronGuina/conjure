@@ -52,6 +52,7 @@
 
 body,
 html {
+    position: relative;
     max-width: 100vw;
     min-height: 100vh;
     font-size: 1.125rem;
@@ -86,6 +87,25 @@ html {
     padding: 2ch;
     margin: 0 auto;
     max-width: 70ch;
+}
+
+.search {
+    margin: 0 auto;
+}
+
+[cmdk-dialog] {
+    margin: 0 auto;
+    @apply rounded-xl bg-white shadow-lg absolute top-1/4 left-0 right-0;
+    max-width: 640px;
+    width: 100%;
+}
+
+[cmdk-input] {
+    @apply rounded-md w-full focus:outline-none focus:ring px-2 py-1;
+}
+
+[cmdk-list] {
+    height: 300px;
 }
 
 .editor {
