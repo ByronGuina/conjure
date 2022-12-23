@@ -1,11 +1,10 @@
 import Link from 'next/link';
 import Head from 'next/head';
-import { useSharedObservable } from '~/modules/sync/hook';
-import { notes$ } from '~/modules/sync/store';
+import { Note } from '~/modules/types';
+
+const notes: Note[] = [];
 
 export default function Index() {
-    const notes = useSharedObservable(notes$);
-
     return (
         <div>
             <Head>

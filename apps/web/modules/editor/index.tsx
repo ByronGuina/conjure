@@ -11,8 +11,6 @@ type EditorState = {
     isFocused: boolean;
 };
 
-export const editor$ = new BehaviorSubject<EditorState>({ isFocused: false });
-
 interface Props {
     initialContent?: string;
     onDone: (content: string) => void;
@@ -56,9 +54,7 @@ export const Editor = memo(function Editor({ initialContent, onDone }: Props) {
         },
         onBlur: ({ editor }) => {
             onDone(editor.getHTML());
-            editor$.next({ isFocused: false });
         },
-        onFocus: () => editor$.next({ isFocused: true }),
     });
 
     return <EditorContent editor={editor} />;
