@@ -1,4 +1,33 @@
+import local from '@next/font/local'
+
 import '../styles/app.css'
+import '../styles/fonts.css'
+
+const duo = local({
+	src: [
+		{
+			path: '../public/fonts/iAWriterDuospace-Regular.woff2',
+			weight: '400',
+			style: 'normal',
+		},
+		{
+			path: '../public/fonts/iAWriterDuospace-Italic.woff2',
+			weight: '400',
+			style: 'italic',
+		},
+		{
+			path: '../public/fonts/iAWriterDuospace-Bold.woff2',
+			weight: '700',
+			style: 'normal',
+		},
+		{
+			path: '../public/fonts/iAWriterDuospace-BoldItalic.woff2',
+			weight: '700',
+			style: 'italic',
+		},
+	],
+	variable: '--font-duospace',
+})
 
 interface Props {
 	children: React.ReactNode
@@ -47,7 +76,7 @@ export default function RootLayout({ children }: Props) {
 				<link rel='shortcut icon' type='image/png' href='/favicon.png' />
 				<link rel='apple-touch-icon' href='/favicon.png' />
 			</head>
-			<body>
+			<body className={duo.variable}>
 				<div className='layout'>{children}</div>
 			</body>
 		</html>

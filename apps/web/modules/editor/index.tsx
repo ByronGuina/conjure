@@ -46,7 +46,7 @@ export const Editor = memo(function Editor({ initialContent, whenDone }: Props) 
 		],
 		editorProps: {
 			attributes: {
-				class: 'editor prose max-w-none focus:outline-none text-geo-grey-100 text-geo-body',
+				class: 'editor prose max-w-none focus:outline-none font-mono',
 			},
 		},
 		onBlur: ({ editor }) => {

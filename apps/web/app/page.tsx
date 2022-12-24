@@ -15,10 +15,10 @@ export default async function Index() {
 
 	return (
 		<div>
-			<div className='flex items-center justify-between'>
-				<h1>Notes</h1>
-				<Link href="/new" className='border border-zinc-900 px-2 py-1'>
-					+ New
+			<div className='flex items-center justify-between mb-3 font-sans'>
+				<h1 className='font-semibold'>NOTES</h1>
+				<Link href="/new" className='border border-zinc-900 px-2 py-1 flex items-center gap-2'>
+					<span>+</span> <span>NEW</span>
 				</Link>
 			</div>
 			<ul className='space-y-1'>

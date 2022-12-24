@@ -3,12 +3,26 @@ module.exports = {
     content: ['./app/**/*.{js,ts,jsx,tsx}', './modules/**/*.{js,ts,jsx,tsx}'],
     theme: {
         fontFamily: {
-            mono: ['JetBrains Mono', 'Menlo', 'Monaco', 'Consolas', '"Liberation Mono"', '"Courier New"', 'monospace'],
+            mono: [
+                'var(--font-duospace)',
+                // 'Duospace',
+                'JetBrains Mono',
+                'Menlo',
+                'Monaco',
+                'Consolas',
+                '"Liberation Mono"',
+                '"Courier New"',
+                'monospace',
+            ],
             sans: [
                 "'Byron', 'Inter', system, -apple-system, '.SFNSText-Regular', 'San Francisco', 'Roboto', 'Segoe UI', 'Helvetica Neue', sans-serif",
             ],
         },
-        extend: {},
+        extend: {
+            colors: {
+                'conjure-grey-10': '#161616',
+            },
+        },
     },
     plugins: [require('@tailwindcss/typography')],
 };
