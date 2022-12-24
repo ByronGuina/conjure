@@ -15,8 +15,13 @@ export default async function Index() {
 
 	return (
 		<div>
-			<h1>Notes</h1>
-			<ul className='font-sans space-y-1'>
+			<div className='flex items-center justify-between'>
+				<h1>Notes</h1>
+				<Link href="/new" className='border border-zinc-900 px-2 py-1'>
+					+ New
+				</Link>
+			</div>
+			<ul className='space-y-1'>
 				{notes.map((note) => (
 					<li key={note.id}>
 						<Link href={`/notes/${note.id}`}>{note.name}</Link>

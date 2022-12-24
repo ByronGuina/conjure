@@ -14,4 +14,14 @@ model Note {
   updatedAt       DateTime  @updatedAt
   name            String    @db.VarChar(255)
   content         String    @db.Text
+  tags             Tag[]
 }
+
+model Tag {
+  id              Int       @default(autoincrement()) @id
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+  name            String    @db.VarChar(255)
+  notes           Note[]      
+}
+

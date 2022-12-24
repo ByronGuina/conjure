@@ -1,7 +1,7 @@
 'use client'
 
+import { Note } from '@prisma/client'
 import { Editor } from '~/modules/editor'
-import { Note } from '~/modules/types'
 
 interface Props {
 	note: Note
@@ -9,6 +9,7 @@ interface Props {
 
 export function EditorWrapper({ note }: Props) {
 	const whenDone = (content: string) => {
+		console.log('content', content)
 		fetch(`/api/${note.id}`, {
 			method: 'POST',
 			body: JSON.stringify({ content }),

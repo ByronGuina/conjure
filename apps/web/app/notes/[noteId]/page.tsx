@@ -1,13 +1,17 @@
-import { Note } from '~/modules/types'
+import { redirect } from 'next/navigation'
+import { db } from '~/modules/db'
 import { EditorWrapper } from './editor-wrapper'
 
-const note: Note = {
-	id: 1,
-	name: 'Hello world',
-	content: 'Hello World',
-	tags: [],
+interface Props {
+	params: {
+		noteId: string
+	}
 }
 
-export default function NotePage() {
+export default async function NotePage({ params }: Props) {
+	const note = await db().note(params.noteId)
+
+	if (!note) redirect('/')
+
 	return <EditorWrapper note={note} />
 }

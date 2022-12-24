@@ -56,7 +56,7 @@ html {
     max-width: 100vw;
     min-height: 100vh;
     font-size: 1.125rem;
-    @apply bg-stone-50 text-zinc-700 font-mono;
+    @apply bg-stone-50 text-zinc-800 font-mono;
     /* letter-spacing: 0.011em; */
 
     text-rendering: optimizeLegibility;
@@ -109,7 +109,7 @@ html {
 }
 
 .editor {
-    min-height: calc(100vh * .85);
+    min-height: calc(100vh * 0.85);
 }
 
 .editor h1.is-editor-empty:first-child::before {
@@ -140,7 +140,8 @@ p {
     @apply bg-zinc-200 rounded-md py-0.5 px-1;
 }
 
-.editor code::before, .editor code::after {
+.editor code::before,
+.editor code::after {
     content: '';
 }
 

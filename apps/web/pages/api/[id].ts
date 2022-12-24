@@ -6,7 +6,8 @@ const client = new PrismaClient();
 export default async function handler(request: NextApiRequest, response: NextApiResponse) {
     try {
         const { body } = request;
-        const content = JSON.parse(body).content;
+        const content: string = JSON.parse(body).content;
+        console.log('id', request.query.id);
 
         const start = content.indexOf('<h1>') + 4;
         const end = content.indexOf('</h1>');
@@ -21,6 +22,7 @@ export default async function handler(request: NextApiRequest, response: NextApi
 
         return response.status(200).json(newNote);
     } catch (e) {
+        console.error('error', e);
         return response.status(500).json({ error: `Cannot parse content from body", ${request.query.id}` });
     }
 }
