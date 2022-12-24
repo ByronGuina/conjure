@@ -77,6 +77,10 @@ html {
     }
 }
 
+::selection {
+    @apply bg-purple-100;
+}
+
 .layout {
     padding: 2ch;
     padding-top: 6ch;
@@ -125,13 +129,6 @@ html {
     @apply font-sans;
 }
 
-.editor h1,
-h2,
-h3,
-p {
-    @apply text-zinc-700;
-}
-
 .editor ul li p {
     margin: 0;
     padding: 0;
@@ -139,6 +136,10 @@ p {
 
 .editor code {
     @apply bg-zinc-200 rounded-md py-0.5 px-1;
+}
+
+.editor a {
+    @apply underline cursor-pointer;
 }
 
 .editor code::before,
