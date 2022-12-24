@@ -1,22 +1,21 @@
 import Link from 'next/link'
-import Head from 'next/head'
-import { Note } from '~/modules/types'
+import { db } from '~/modules/db'
 
-const notes: Note[] = [
-	{
-		id: 1,
-		name: 'Note 1',
-		content: 'Content 1',
-		tags: [],
-	},
-]
+// const notes: Note[] = [
+// 	{
+// 		id: 1,
+// 		name: 'Note 1',
+// 		content: 'Content 1',
+// 		tags: [],
+// 	},
+// ]
 
-export default function Index() {
+export default async function Index() {
+	const notes = await db().notes()
+
 	return (
 		<div>
-			<Head>
-				<title>Thoughts | @bairun_</title>
-			</Head>
+			<h1>Notes</h1>
 			<ul className='font-sans space-y-1'>
 				{notes.map((note) => (
 					<li key={note.id}>

@@ -10,7 +10,8 @@
         "start": "next start",
         "lint": "next lint",
         "vercel": "vercel --prebuilt",
-        "postinstall": "pnpm dlx prisma generate"
+        "postinstall": "pnpm dlx prisma generate",
+        "generate": "prisma generate"
     },
     "dependencies": {
         "@prisma/client": "^4.8.0",

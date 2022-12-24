@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import '../styles/app.css'
 
 interface Props {
