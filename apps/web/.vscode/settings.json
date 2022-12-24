@@ -8,5 +8,7 @@
   ],
   "deno.unstable": true,
   "deno.importMap": ".netlify/edge-functions-import-map.json",
-  "deno.internalDebug": false
+  "deno.internalDebug": false,
+  "typescript.tsdk": "../../node_modules/.pnpm/typescript@4.8.2/node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true
 }

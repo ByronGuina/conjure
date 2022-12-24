@@ -2,7 +2,8 @@
   "include": [
     "remix.env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
+    ".next/types/**/*.ts"
   ],
   "compilerOptions": {
     "lib": [
@@ -29,7 +30,16 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "incremental": true,
-    "module": "esnext"
+    "module": "esnext",
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
-  "exclude": ["node_modules", "*.config.js"]
+  "exclude": [
+    "node_modules",
+    "next.config.js",
+    "tailwind.config.js"
+  ]
 }
