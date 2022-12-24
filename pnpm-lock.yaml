@@ -49,7 +49,6 @@ importers:
       '@tiptap/extension-placeholder': 2.0.0-beta.209_p6swxjr7orgpplcvvb7gqvyyt4
       '@tiptap/react': 2.0.0-beta.114_4snqxtohfd36imjy7jomugr5mq
       '@tiptap/starter-kit': 2.0.0-beta.191_o7b7zkk5fu2dmo3bb244s6a3jm
-      '@types/uuid': 8.3.4
       cmdk: 0.1.20_63dfw6rfgd64rl77ptfma4cvt4
       next: 13.1.0_biqbaboplfbrettd7655fr4n2y
       prosemirror-commands: 1.5.0
@@ -69,6 +68,7 @@ importers:
       '@types/react': 18.0.18
       '@types/react-dom': 18.0.6
       '@types/showdown': 2.0.0
+      '@types/uuid': 8.3.4
       autoprefixer: 10.4.8_postcss@8.4.16
       eslint: 8.23.0
       eslint-config-next: 12.2.5_yqf6kl63nyoq5megxukfnom5rm
@@ -814,7 +814,7 @@ packages:
 
   /@types/uuid/8.3.4:
     resolution: {integrity: sha512-c/I8ZRb51j+pYGAu5CrFMRxqZ2ke4y2grEBO5AUjgSkSk+qT2Ea+OdWElz/OiMf5MNpn2b17kuVBwZLQJXzihw==}
-    dev: false
+    dev: true
 
   /@typescript-eslint/parser/5.36.1_yqf6kl63nyoq5megxukfnom5rm:
     resolution: {integrity: sha512-/IsgNGOkBi7CuDfUbwt1eOqUXF9WGVBW9dwEe1pi+L32XrTsZIgmDFIi2RxjzsvB/8i+MIf5JIoTEH8LOZ368A==}
